@@ -1,22 +1,24 @@
 import React from 'react';
-import NavBar from './NavBar';
-import MyButton from './MyButton';
+// import NavBar from './NavBar';
+import MakeListButton from './MakeListButton';
+import HeaderContainer from './HeaderContainer';
 import FormContainer from './FormContainer';
+import Clock from './Clock';
+import ListContainer from './ListContainer';
 
 class App extends React.Component{
   render(){
     return (
-    <div className="col-md-4" padding='200'>
-      <div className="HeaderContainer">
-        <h1>TitleComponent/ </h1>
-        <h1>MenuTabComponent/</h1>
-      </div>
-      <div className="ListContainer">
+      <div className="col-md-4">
+        <HeaderContainer />
         <FormContainer />
-        <MyButton name="Make List Item"/>
+        <ListContainer />
+        <MakeListButton name="Make List Item"/>
       </div>
-    </div>);
+    );
   }
 }
 
 export default App;
+
+/*  */
