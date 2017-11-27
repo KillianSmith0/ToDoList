@@ -5,7 +5,6 @@ class ListItem extends React.Component{
     super(props);
 
     this.state = {
-      complete: "Incomplete😡",
       isComplete: false
     }
 
@@ -14,17 +13,19 @@ class ListItem extends React.Component{
   }
 
   handleComplete(){
-    if(this.state.isComplete == false){
-      this.setState({
-        complete: "Complete!👌🏽",
-        isComplete: true
-      });
-    }else{
-      this.setState({
-        complete: "Incomplete😡",
-        isComplete: false
-      });
-    }
+    this.setState(previousState => ({
+      isComplete: !previousState.isComplete
+    }))
+
+    // if(this.state.isComplete == false){
+    //   this.setState({
+    //     isComplete: true
+    //   });
+    // }else{
+    //   this.setState({
+    //     isComplete: false
+    //   });
+    // }
   }
 
   handleRemove(){
@@ -34,11 +35,11 @@ class ListItem extends React.Component{
   render(){
 
     return (
-      <div id={"ListItem-"+this.props.id}>
-        <button onClick={this.handleComplete}>{this.state.complete}</button>
-          {this.props.todo}
+      <li id={"ListItem-"+this.props.id}>
+        <button onClick={this.handleComplete}>{this.state.isComplete ? 'Complete👌🏽' : 'Incomplete👎🏼'}</button>
+         {this.props.todo} 
         <button onClick={this.handleRemove}>Remove</button>
-      </div>
+      </li>
     );
   }
 }
