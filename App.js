@@ -1,9 +1,6 @@
 import React from 'react';
-// import NavBar from './NavBar';
-import MakeListButton from './MakeListButton';
 import HeaderContainer from './HeaderContainer';
-import Clock from './Clock';
-import ListContainer from './ListContainer';
+import ListContainer from './ListContainer'
 
 class App extends React.Component{
   render(){
@@ -11,7 +8,6 @@ class App extends React.Component{
       <div className="col-md-4">
         <HeaderContainer />
         <ListContainer />
-        <MakeListButton name="Make List Item"/>
       </div>
     );
   }

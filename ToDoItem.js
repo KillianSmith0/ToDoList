@@ -31,7 +31,7 @@ class ToDoItem extends React.Component{
     }
 
     return (
-      <li id={"ToDoItem-"+this.props.id}>
+      <li>
         <button onClick={this.handleComplete}>{this.state.isComplete ? 'Complete👌🏽' : 'Incomplete👎🏼'}</button>
          {this.props.todo}
         <button onClick={this.handleRemove}>❌</button>
@@ -39,5 +39,5 @@ class ToDoItem extends React.Component{
     );
   }
 }
-// <input type="checkbox" id="completed"/>
+
 export default ToDoItem;

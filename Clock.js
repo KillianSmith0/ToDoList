@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 /* One way of making a component is using function, however can't use States with funcs
 function Clock(props){
