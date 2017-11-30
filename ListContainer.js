@@ -18,16 +18,21 @@ class ListContainer extends React.Component {
   }
 
   handleSubmit(event){
+    var toDoItem = {
+      todo: this.state.todo,
+      time: this.props.time.toLocaleString()
+    }
+
     if(this.state.todo){  // if(this.state.todo && true) === this.state.todo... true != 0/null/false/undefined/""
       this.setState({
         todo: '',
-        items: [...this.state.items, this.state.todo]
+        items: [...this.state.items, toDoItem]
       });
     }
     event.preventDefault();   // Stops from reloading page
   }
 
-  handleRemove(id){
+  onRemove(id){
 
   }
 
@@ -38,7 +43,7 @@ class ListContainer extends React.Component {
           <input type="text" value={this.state.todo} onChange={this.handleChange}/>
           <input type="submit" value="Enter"/>
         </form>
-        <List items={this.state.items} handleRemove={this.handleRemove}/>
+        <List items={this.state.items} onRemove={this.onRemove}/>
       </div>
     )
   }

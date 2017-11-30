@@ -35,6 +35,7 @@ class ToDoItem extends React.Component{
         <button onClick={this.handleComplete}>{this.state.isComplete ? 'Complete👌🏽' : 'Incomplete👎🏼'}</button>
          {this.props.todo}
         <button onClick={this.handleRemove}>❌</button>
+        Created on: {this.props.time}
       </li>
     );
   }

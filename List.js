@@ -4,13 +4,15 @@ import ToDoItem from './ToDoItem';
 class List extends React.Component {
 
   render(){
-      this.props.items.map((item, index) => console.log(item + ' ' + index));
+      // this.props.items.map((item, index) => console.log(item + ' ' + index));
     return(
-      <ul className="List">
+      <ol className="List">
       {
-        this.props.items.map((item, index) => <ToDoItem key={index} todo={item} onRemove={this.props.onRemove}/>)
+        this.props.items.map(
+          (item, index) =>
+          <ToDoItem key={index} todo={item.todo} onRemove={this.props.onRemove} time={item.time}/>)
       }
-      </ul>
+      </ol>
     );
   }
 }

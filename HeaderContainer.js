@@ -8,7 +8,6 @@ class HeaderContainer extends React.Component {
       <div className="HeaderContainer">
       <h1>To-Do List🖍</h1>
       <NavBar/>
-      <Clock/>
       </div>
     );
   }
